@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
 
@@ -16,13 +15,17 @@ public class Main {
                 matrix[i][j] = random.nextInt(256);
             }
         }
-        System.out.println("Дана следующая матрица");
+
+        System.out.println("Дана следующая матрица:");
         viewMatrix(matrix);
-        System.out.println("После поворота");
+
         rotateMatrix(matrix, rotatedMatrix);
+
+        System.out.println("После поворота:");
+        viewMatrix(rotatedMatrix);
     }
 
-    public static void viewMatrix(int [][] matrix) {
+    public static void viewMatrix(int[][] matrix) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 System.out.format("%4d", matrix[i][j]);
@@ -31,13 +34,11 @@ public class Main {
         }
     }
 
-    public static void rotateMatrix (int [][] matrix, int [][] rotatedMatrix) {
+    public static void rotateMatrix(int[][] matrix, int[][] rotatedMatrix) {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                rotatedMatrix[i][j] = matrix [SIZE - 1 - j][i];
-                System.out.format("%4d", rotatedMatrix[i][j]);
+                rotatedMatrix[i][j] = matrix[SIZE - 1 - j][i];
             }
-            System.out.println();
         }
     }
 }
